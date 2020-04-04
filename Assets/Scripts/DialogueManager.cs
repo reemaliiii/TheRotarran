@@ -12,6 +12,9 @@ public class DialogueManager : MonoBehaviour
 
     public Text dialogue;
     public GameObject dialogueBox;
+    private AudioSource _audioSource;
+    public AudioClip DroneSound;
+
 
     public Animator anim;
 
@@ -29,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         sentences = new Queue<string>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -79,11 +83,15 @@ public class DialogueManager : MonoBehaviour
     IEnumerator WordByWordSentence(string sentence)
     {
         dialogue.text = "";
+        _audioSource.PlayOneShot(DroneSound);
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogue.text += letter;
             yield return null;
         }
+
+        Invoke("StopSound" , 1f);
     }
 
     private void EndDialogue()
@@ -98,5 +106,12 @@ public class DialogueManager : MonoBehaviour
             GameManager.instace.OpenDoor(DoorToUnlock);
         }
 
+        _audioSource.Stop();
+
+    }
+
+    private void StopSound()
+    {
+        _audioSource.Stop();
     }
 }

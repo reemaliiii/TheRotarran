@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Char
   - Interactable
+  - BossRoom
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : UIBehaviour
 {
@@ -26,7 +27,7 @@ public class MainMenu : UIBehaviour
     }
 
     private void OnPlayButtonClick() {
-        // start the game
+        SceneManager.LoadScene(1);
         gameObject.SetActive(false);
         m_Background.gameObject.SetActive(false);
     }

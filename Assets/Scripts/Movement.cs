@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     private int cnt = 1;
 
     public float Speed;
+    public AudioClip BossFight;
+
     Rigidbody2D rb;
     Animator anim;
 
@@ -26,6 +28,16 @@ public class Movement : MonoBehaviour
         if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(true);
+        }
+
+        if(collision.transform.tag =="BossRoom")
+        {
+            Camera.main.GetComponent<CameraMovement>().DownClamp = 13.5f;
+            Camera.main.GetComponent<CameraMovement>().TopClamp = 13.5f;
+            Camera.main.GetComponent<CameraMovement>().RightClamp = 0;
+            Camera.main.GetComponent<CameraMovement>().LeftClamp = 0;
+            Camera.main.GetComponent<AudioSource>().Stop();
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(BossFight);
         }
     }
 
