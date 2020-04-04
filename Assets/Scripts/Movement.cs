@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour
             Character = collision.gameObject;
             Debug.Log("convo started");
             Character.GetComponent<DialogueTrigger>().TriggerDialogue();
-            audioManager.Play("narrator");
+            audioManager.Play("narratorBackground");
             cnt = 0;
 
         }
