@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   InteractionText: {fileID: 2113399962}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 519420030}
 --- !u!1 &1655896655
 GameObject:
   m_ObjectHideFlags: 0
