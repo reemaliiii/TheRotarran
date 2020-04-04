@@ -15,10 +15,12 @@ public class Movement : MonoBehaviour
     public AudioClip BossFight;
 
     Rigidbody2D rb;
+    Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +30,7 @@ public class Movement : MonoBehaviour
             InteractionText.SetActive(true);
         }
 
-        if(collision.transform.tag =="BossRoom")
+        if (collision.transform.tag == "BossRoom")
         {
             Camera.main.GetComponent<CameraMovement>().DownClamp = 13.5f;
             Camera.main.GetComponent<CameraMovement>().TopClamp = 13.5f;
@@ -62,14 +64,19 @@ public class Movement : MonoBehaviour
     {
         if (!DialogueManager.Instance.InDialogue)
         {
-            Vector2 mov;
+            Vector2 mov = Vector2.zero;
             mov.x = Input.GetAxis("Horizontal");
             mov.y = Input.GetAxis("Vertical");
+
+            anim.SetInteger("DirX", System.Convert.ToInt32(mov.x));
+            anim.SetInteger("DirY", System.Convert.ToInt32(-mov.y));
+
             mov.Normalize();
 
             mov *= Time.deltaTime * Speed;
 
             rb.MovePosition(rb.position + mov);
+
         }
     }
 }
