@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
             default: // 8aby
                 break;
         }
+        // get him back to the main menu after losing (after playing animation ) 
     }
 
     private void Awake()
@@ -40,6 +42,16 @@ public class GameManager : MonoBehaviour
     public void OpenDoor(int i)
     {
         doors[i].Unlocked = true;
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }
