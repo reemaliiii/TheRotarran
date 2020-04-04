@@ -13,13 +13,26 @@ public class DialogueManager : MonoBehaviour
 
     public Animator anim;
 
+    int DoorToUnlock;
+    bool InDialogue;
+    bool ShouldKill;
+
     private void Start()
     {
         sentences = new Queue<string>();
     }
-
-    public void StartDialogue(Dialogue dialogue)
+    private void Update()
     {
+        if (InDialogue && Input.GetKeyDown(KeyCode.Return))
+        {
+            NextSentence();
+        }
+    }
+    public void StartDialogue(Dialogue dialogue, int NextDoor, bool shouldKill)
+    {
+        ShouldKill = shouldKill;
+        InDialogue = true;
+        DoorToUnlock = NextDoor;
         dialogueBox.SetActive(true);
         sentences.Clear();
         anim.SetBool("IsOpen", true);
@@ -66,7 +79,15 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        InDialogue = false;
+
         dialogueBox.SetActive(false);
         anim.SetBool("IsOpen", false);
+        //Call next lvl
+        if (DoorToUnlock != -1)
+        {
+            GameManager.instace.OpenDoor(DoorToUnlock);
+        }
+
     }
 }

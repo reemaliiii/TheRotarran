@@ -7,13 +7,15 @@ public class CharacterInteract : MonoBehaviour
     public KeyCode InteractKey = KeyCode.E;
     public string InteractionTag = "Interactable";
 
+
+
     bool inTrigger;
     GameObject col;
     private void Update()
     {
         if (inTrigger && col && Input.GetKeyDown(InteractKey))
         {
-            col.BroadcastMessage("OnInteract");
+            col.BroadcastMessage("OnInteract", gameObject);
 
         }
     }

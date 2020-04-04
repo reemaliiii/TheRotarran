@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-
-    void OnInteract()
+    void OnInteract(GameObject Caller)
     {
-        Debug.Log("Interact with" + name);
+
+        Debug.Log(Caller.name + " Interact with " + name);
     }
+
 }
