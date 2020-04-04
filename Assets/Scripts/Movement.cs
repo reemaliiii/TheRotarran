@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     Vector2 dir;
     private GameObject Character;
     public GameObject InteractionText;
+    public AudioManager audioManager;
 
     // counter to stop the bug where you can reset the dialogue even before finishing it.
     private int cnt = 1;
@@ -24,21 +25,23 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Char")
+        if (collision.transform.tag == "Char")
         {
             InteractionText.SetActive(true);
+            audioManager.Play("pressT");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Char" && Input.GetKeyDown(KeyCode.T) && cnt == 1)
+        if (collision.transform.tag == "Char" && Input.GetKeyDown(KeyCode.T) && cnt == 1)
         {
-            Character = collision.gameObject; 
+            Character = collision.gameObject;
             Debug.Log("convo started");
             Character.GetComponent<DialogueTrigger>().TriggerDialogue();
+            audioManager.Play("narrator");
             cnt = 0;
-            
+
         }
     }
 
