@@ -8,8 +8,19 @@ public class DialogueTrigger : MonoBehaviour
     public int NextDoor;
     public bool ShouldKill;
 
+
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, NextDoor,ShouldKill);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, NextDoor, ShouldKill);
+
+    }
+
+    void OnInteract(GameObject Caller)
+    {
+        if (DialogueManager.Instance.InDialogue)
+            return;
+        Debug.Log(Caller.name + " Interact with " + name);
+        TriggerDialogue();
+
     }
 }

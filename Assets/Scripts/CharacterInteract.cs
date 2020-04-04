@@ -16,7 +16,6 @@ public class CharacterInteract : MonoBehaviour
         if (inTrigger && col && Input.GetKeyDown(InteractKey))
         {
             col.BroadcastMessage("OnInteract", gameObject);
-
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

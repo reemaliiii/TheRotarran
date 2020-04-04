@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     public float movementSpeed = 10;
     private GameObject Character;
     public GameObject InteractionText;
-
     // counter to stop the bug where you can reset the dialogue even before finishing it.
     private int cnt = 1;
 
@@ -22,26 +21,26 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Char")
+        if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(true);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Char" && Input.GetKeyDown(KeyCode.T) && cnt == 1)
-        {
-            Character = collision.gameObject;
-            Debug.Log("convo started");
-            Character.GetComponent<DialogueTrigger>().TriggerDialogue();
-            cnt = 0;
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.transform.tag == "Char" && Input.GetKeyDown(KeyCode.T) && cnt == 1)
+    //    {
+    //        Character = collision.gameObject;
+    //        Debug.Log("convo started");
+    //        Character.GetComponent<DialogueTrigger>().TriggerDialogue();
+    //        cnt = 0;
+    //    }
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Char")
+        if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(false);
             cnt = 1;
@@ -49,13 +48,16 @@ public class Movement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector2 mov;
-        mov.x = Input.GetAxis("Horizontal");
-        mov.y = Input.GetAxis("Vertical");
-        mov.Normalize();
+        if (!DialogueManager.Instance.InDialogue)
+        {
+            Vector2 mov;
+            mov.x = Input.GetAxis("Horizontal");
+            mov.y = Input.GetAxis("Vertical");
+            mov.Normalize();
 
-        mov *= Time.deltaTime * Speed;
+            mov *= Time.deltaTime * Speed;
 
-        rb.MovePosition(rb.position + mov);
+            rb.MovePosition(rb.position + mov);
+        }
     }
 }

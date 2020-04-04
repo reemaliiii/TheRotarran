@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance;
+
     Queue<string> sentences;
 
     public Text dialogue;
@@ -14,9 +16,16 @@ public class DialogueManager : MonoBehaviour
     public Animator anim;
 
     int DoorToUnlock;
-    bool InDialogue;
+    public bool InDialogue;
     bool ShouldKill;
 
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+    }
     private void Start()
     {
         sentences = new Queue<string>();

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 49981021}
   m_Layer: 0
   m_Name: Char 2
-  m_TagString: Char
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49981016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.43, y: 3.21, z: 0}
+  m_LocalPosition: {x: 3.45, y: 4.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 284502243}
   m_Layer: 0
   m_Name: Char 1
-  m_TagString: Char
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284502238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.95, y: 3.24, z: 0}
+  m_LocalPosition: {x: -1.9300001, y: 4.0699997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1364,6 +1364,7 @@ MonoBehaviour:
   dialogue: {fileID: 1607575859}
   dialogueBox: {fileID: 642119949}
   anim: {fileID: 642119953}
+  InDialogue: 0
 --- !u!4 &1145942982
 Transform:
   m_ObjectHideFlags: 0
