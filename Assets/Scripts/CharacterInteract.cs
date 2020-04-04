@@ -7,8 +7,6 @@ public class CharacterInteract : MonoBehaviour
     public KeyCode InteractKey = KeyCode.E;
     public string InteractionTag = "Interactable";
 
-
-
     bool inTrigger;
     GameObject col;
     private void Update()

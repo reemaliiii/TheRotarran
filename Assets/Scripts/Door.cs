@@ -59,7 +59,7 @@ public class Door : MonoBehaviour
     IEnumerator RotateMe(Vector3 byAngles, float inTime)
     {
         var fromAngle = DoorMesh.rotation;
-        var toAngle = Quaternion.Euler(/*transform.eulerAngles + */byAngles);
+        var toAngle = Quaternion.Euler(/*transform.eulerAngles + */DoorMesh.eulerAngles + byAngles);
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
         {
             DoorMesh.rotation = Quaternion.Slerp(fromAngle, toAngle, t);

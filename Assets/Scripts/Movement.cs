@@ -13,10 +13,12 @@ public class Movement : MonoBehaviour
 
     public float Speed;
     Rigidbody2D rb;
+    Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,14 +52,19 @@ public class Movement : MonoBehaviour
     {
         if (!DialogueManager.Instance.InDialogue)
         {
-            Vector2 mov;
+            Vector2 mov = Vector2.zero;
             mov.x = Input.GetAxis("Horizontal");
             mov.y = Input.GetAxis("Vertical");
+
+            anim.SetInteger("DirX", System.Convert.ToInt32(mov.x));
+            anim.SetInteger("DirY", System.Convert.ToInt32(-mov.y));
+
             mov.Normalize();
 
             mov *= Time.deltaTime * Speed;
 
             rb.MovePosition(rb.position + mov);
+
         }
     }
 }
