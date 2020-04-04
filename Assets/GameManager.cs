@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         doors[i].Unlocked = true;
     }
 
-    public void StartGame()
+   /* public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
@@ -52,6 +52,6 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    }
+    }*/
 
 }
