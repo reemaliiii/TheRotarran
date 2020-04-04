@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Door[] doors;
     int currentDoorProgress;
 
+    public PauseMenu pauseMenu;
+    public bool pauseMenuActive = false;
+
     public void OpenBox()
     {
         switch (Keys)
@@ -37,6 +40,12 @@ public class GameManager : MonoBehaviour
     {
         Keys = 0;
         currentDoorProgress = 0;
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            pauseMenu.HandleGameManagerEscape();
+        }
     }
 
     public void OpenDoor(int i)

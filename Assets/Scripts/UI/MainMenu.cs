@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : UIBehaviour
+public class MainMenu : Menu
 {
     [SerializeField]
     private Button m_PlayButton;
@@ -13,8 +13,6 @@ public class MainMenu : UIBehaviour
     private Button m_ExitButton;
     [SerializeField]
     private OptionsMenu m_OptionsMenu;
-    [SerializeField]
-    private RectTransform m_Background;
 
     protected override void Awake() {
         base.Awake();
@@ -28,14 +26,13 @@ public class MainMenu : UIBehaviour
 
     private void OnPlayButtonClick() {
         SceneManager.LoadScene(1);
-        gameObject.SetActive(false);
-        m_Background.gameObject.SetActive(false);
+        Hide();
     }
 
     private void OnOptionsButtonClick() {
         // show options menu
-        gameObject.SetActive(false);
-        m_OptionsMenu.gameObject.SetActive(true);
+        Hide();
+        m_OptionsMenu.Show();
     }
 
     private void OnExitButtonClick() {

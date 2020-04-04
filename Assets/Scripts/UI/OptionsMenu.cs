@@ -2,19 +2,16 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class OptionsMenu : UIBehaviour
+public class OptionsMenu : Menu
 {
     [SerializeField]
     private Slider m_MusicSlider;
-
     [SerializeField]
     private Slider m_SoundSlider;
-
     [SerializeField]
     private Button m_BackButton;
-
     [SerializeField]
-    private MainMenu m_MainMenu;
+    private Menu m_BackMenu;
 
     protected override void Start() {
         base.Start();
@@ -34,7 +31,7 @@ public class OptionsMenu : UIBehaviour
     }
 
     private void OnBackButtonClick() {
-        gameObject.SetActive(false);
-        m_MainMenu.gameObject.SetActive(true);
+        Hide();
+        m_BackMenu.Show();
     }
 }
