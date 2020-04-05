@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (InDialogue && Input.GetKeyDown(KeyCode.Return))
         {
+            _audioSource.Stop();
             NextSentence();
         }
     }
@@ -91,7 +92,8 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
 
-        Invoke("StopSound" , 1f);
+        //Invoke("StopSound" , 1f);
+
     }
 
     private void EndDialogue()

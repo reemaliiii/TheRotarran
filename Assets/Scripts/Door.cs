@@ -7,9 +7,10 @@ public class Door : MonoBehaviour
     public bool HideDoor = true;
     public float AnimeTime = 0.8f;
     public bool Unlocked;
+    public Vector3 axis;
+
 
     bool IsOpen;
-    public Vector3 Axis;
 
     Transform DoorMesh;
 
@@ -20,12 +21,12 @@ public class Door : MonoBehaviour
     void OpenDoor()
     {
         StopAllCoroutines();
-        StartCoroutine(RotateMe(Axis * (90 + (HideDoor ? 0 : 90)), AnimeTime));
+        StartCoroutine(RotateMe(axis * (90 + (HideDoor ? 0 : 90)), AnimeTime));
     }
     void CloseDoor()
     {
         StopAllCoroutines();
-        StartCoroutine(RotateMe(Axis * 0, AnimeTime));
+        StartCoroutine(RotateMe(axis * 0, AnimeTime));
     }
     void OnInteract(GameObject Caller)
     {

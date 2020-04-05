@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
             InteractionText.SetActive(true);
         }
 
-        if(collision.transform.tag =="BossRoom")
+        if (collision.transform.tag == "BossRoom")
         {
             Camera.main.GetComponent<CameraMovement>().DownClamp = 13.5f;
             Camera.main.GetComponent<CameraMovement>().TopClamp = 13.5f;
