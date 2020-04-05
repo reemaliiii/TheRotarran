@@ -7,13 +7,11 @@ public class Door : MonoBehaviour
     public bool HideDoor = true;
     public float AnimeTime = 0.8f;
     public bool Unlocked;
-    public Vector3 axis;
+    public Vector3 axis = Vector3.up;
 
 
     bool IsOpen;
-
     Transform DoorMesh;
-
     private void Start()
     {
         DoorMesh = transform.GetChild(0);
@@ -62,7 +60,7 @@ public class Door : MonoBehaviour
     IEnumerator RotateMe(Vector3 byAngles, float inTime)
     {
         var fromAngle = DoorMesh.rotation;
-        var toAngle = Quaternion.Euler(/*transform.eulerAngles + */DoorMesh.eulerAngles + byAngles);
+        var toAngle = Quaternion.Euler(/*transform.eulerAngles + */ byAngles);
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
         {
             DoorMesh.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
