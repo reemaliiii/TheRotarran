@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     public float Speed;
     public AudioClip BossFight;
+    public GameObject BossRoomDoor;
 
     private bool KillRight, KillLeft;
 
@@ -42,6 +43,7 @@ public class Movement : MonoBehaviour
             Camera.main.GetComponent<CameraMovement>().LeftClamp = 0;
             Camera.main.GetComponent<AudioSource>().Stop();
             Camera.main.GetComponent<AudioSource>().PlayOneShot(BossFight);
+            BossRoomDoor.SetActive(true);
         }
     }
 
