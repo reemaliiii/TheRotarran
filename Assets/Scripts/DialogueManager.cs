@@ -135,8 +135,8 @@ public class DialogueManager : MonoBehaviour
     public void OnKillButtonClick(Transform chr)
     {
         //EndDialogue();
-        ShouldKill = chr.GetComponent<DialogueTrigger>().ShouldKill;
-        chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
+        DialogueTrigger dt = chr.GetComponent<DialogueTrigger>();
+        ShouldKill = dt.ShouldKill;
         if (ShouldKill != true)
         {
             KilledWrongPerson++;
@@ -151,6 +151,11 @@ public class DialogueManager : MonoBehaviour
         }
         SpokenTo.Add(chr);
         GameManager.instace.UpdateKeysScore(KilledRightPerson);
+        if (dt.IsBoss)
+        {
+            dt.TriggerDialogue();
+        }
+        chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
         Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
     }
 
