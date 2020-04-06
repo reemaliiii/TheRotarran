@@ -49,15 +49,16 @@ public class Movement : MonoBehaviour
                 m_DialogueManager.GetComponent<AudioSource>().enabled = false;
             }
 
-            else if(collision.name == "Boss")
+            /*else if(collision.name == "Boss")
             {
                 Narratorpic.sprite = Boss;
                 m_DialogueManager.GetComponent<AudioSource>().enabled = false;
-            }
+            */
 
             else
             {
-                Narratorpic.sprite = Drone;
+                //Narratorpic.sprite = Drone;
+                Narratorpic.sprite = Boss;
                 m_DialogueManager.GetComponent<AudioSource>().enabled = true;
             }
 

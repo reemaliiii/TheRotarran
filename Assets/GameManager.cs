@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenDoor(int i)
     {
-        doors[i].Unlocked = true;
+        //doors[i].Unlocked = true;
     }
 
     public void RestartGame()
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowBombTable()
     {
-        bombTable.SetActive(true);
+        //bombTable.SetActive(true);
     }
 
     private void Boss()

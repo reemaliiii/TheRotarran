@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogue;
     public GameObject dialogueBox;
     private AudioSource _audioSource;
-    public AudioClip DroneSound;
+    //public AudioClip DroneSound;
 
     //public Button killButton;
     //public Button leaveButton;
@@ -112,7 +112,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator WordByWordSentence(string sentence)
     {
         dialogue.text = "";
-        _audioSource.PlayOneShot(DroneSound);
+        //_audioSource.PlayOneShot(DroneSound);
 
         foreach (char letter in sentence.ToCharArray())
         {
@@ -133,8 +133,11 @@ public class DialogueManager : MonoBehaviour
         //leaveButton.gameObject.SetActive(true);
     }
 
+    private Transform CharTemp ;
+
     public void OnKillButtonClick(Transform chr)
     {
+        
         //EndDialogue();
         DialogueTrigger dt = chr.GetComponent<DialogueTrigger>();
         ShouldKill = dt.ShouldKill;
@@ -150,14 +153,26 @@ public class DialogueManager : MonoBehaviour
                 GameManager.instace.ShowBombTable();
             }
         }
+
         SpokenTo.Add(chr);
+
+        if (SpokenTo.Count >= SpeakToNum)
+        {
+            GameManager.instace.UnlockBoss();
+        }
+
         GameManager.instace.UpdateKeysScore(KilledRightPerson);
         if (dt.IsBoss)
         {
             dt.TriggerDialogue();
+            CharTemp = chr;
         }
-        chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
+        else
+        {
+            
+        }
         Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
+        chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
     }
 
     private void OnLeaveButtonClick()
@@ -191,6 +206,8 @@ public class DialogueManager : MonoBehaviour
 
         //killButton.gameObject.SetActive(false);
         //leaveButton.gameObject.SetActive(false);
+
+        
 
         _audioSource.Stop();
 
