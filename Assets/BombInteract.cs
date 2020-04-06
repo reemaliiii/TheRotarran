@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class BombInteract : MonoBehaviour
 {
+    public GameObject WonPanel;
     public SpriteRenderer bomb;
     public Sprite Deactivated_bomb;
     void OnInteract(GameObject Caller)
     {
 
         Debug.Log(Caller.name + " Interact with " + name);
-        bomb.sprite = Deactivated_bomb; 
+        bomb.sprite = Deactivated_bomb;
+
+        Invoke("WinState", 1);
+    }
+
+    private void WinState()
+    {
+        WonPanel.SetActive(true);
     }
 }

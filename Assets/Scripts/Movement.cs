@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     DialogueTrigger DT;
+    public GameObject m_DialogueManager;
     public float movementSpeed = 10;
     private GameObject Character;
     public GameObject InteractionText;
@@ -14,6 +16,13 @@ public class Movement : MonoBehaviour
     public float Speed;
     public AudioClip BossFight;
     public GameObject BossRoomDoor;
+
+    public Image Narratorpic;
+    public Sprite Boss;
+    public Sprite cat;
+    public Sprite Drone;
+    
+
 
     private bool KillRight, KillLeft;
 
@@ -33,6 +42,25 @@ public class Movement : MonoBehaviour
         if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(true);
+
+            if(collision.name == "cat1")
+            {
+                Narratorpic.sprite = cat;
+                m_DialogueManager.GetComponent<AudioSource>().enabled = false;
+            }
+
+            else if(collision.name == "Boss")
+            {
+                Narratorpic.sprite = Boss;
+                m_DialogueManager.GetComponent<AudioSource>().enabled = false;
+            }
+
+            else
+            {
+                Narratorpic.sprite = Drone;
+                m_DialogueManager.GetComponent<AudioSource>().enabled = true;
+            }
+
         }
 
         if (collision.transform.tag == "BossRoom")
@@ -45,6 +73,8 @@ public class Movement : MonoBehaviour
             Camera.main.GetComponent<AudioSource>().PlayOneShot(BossFight);
             BossRoomDoor.SetActive(true);
         }
+
+
     }
 
     //private void OnTriggerStay2D(Collider2D collision)
@@ -85,4 +115,6 @@ public class Movement : MonoBehaviour
 
         }
     }
+
+
 }

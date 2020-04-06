@@ -42,7 +42,7 @@ public class CharacterAttack : MonoBehaviour
                 //print(DirToChar);
                 var angle = Mathf.Abs(Vector2.Angle(DirToChar, myDir));
 
-                //print(angle);
+                print(angle);
 
                 if (angle > 150)
                 {
@@ -50,8 +50,8 @@ public class CharacterAttack : MonoBehaviour
                     chr.tag = "Untagged";
                     InteractionText.SetActive(false);
                     //chr.gameObject.SetActive(false);
+                    chr = null;
                 }
-                chr = null;
             }
         }
     }

@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     {
         Keys = 0;
         currentDoorProgress = 0;
+
+        Invoke("Boss", 2);
     }
 
     private void Update()
@@ -87,5 +89,10 @@ public class GameManager : MonoBehaviour
     public void ShowBombTable()
     {
         bombTable.SetActive(true);
+    }
+
+    private void Boss()
+    {
+        BossRoom.SetActive(false);
     }
 }
