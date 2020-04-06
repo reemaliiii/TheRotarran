@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     public KeyCode StabKey = KeyCode.K;
+    public GameObject InteractionText;
 
     Animator anim;
 
@@ -43,10 +44,11 @@ public class CharacterAttack : MonoBehaviour
 
                 //print(angle);
 
-                if (angle > 160)
+                if (angle > 150)
                 {
                     DialogueManager.Instance.OnKillButtonClick(chr.transform);
                     chr.tag = "Untagged";
+                    InteractionText.SetActive(false);
                     //chr.gameObject.SetActive(false);
                 }
                 chr = null;

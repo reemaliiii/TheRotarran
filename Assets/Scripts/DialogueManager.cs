@@ -144,6 +144,10 @@ public class DialogueManager : MonoBehaviour
         else
         {
             KilledRightPerson++;
+            if (KilledRightPerson == DialogueTrigger.GuiltyPeopleCount)
+            {
+                GameManager.instace.ShowBombTable();
+            }
         }
         SpokenTo.Add(chr);
         GameManager.instace.UpdateKeysScore(KilledRightPerson);

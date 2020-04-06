@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     int currentDoorProgress;
     public Text KeysScore;
 
+    public GameObject bombTable;
     public GameObject BossRoom;
     public PauseMenu pauseMenu;
     public bool pauseMenuActive = false;
@@ -80,5 +81,10 @@ public class GameManager : MonoBehaviour
     public void UpdateKeysScore(int keys)
     {
         KeysScore.text = keys.ToString() + "*";
+    }
+
+    public void ShowBombTable()
+    {
+        bombTable.SetActive(true);
     }
 }

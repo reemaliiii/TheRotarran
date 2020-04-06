@@ -51,10 +51,14 @@ public class DialogueTrigger : MonoBehaviour
             else if (dialogManager.KilledRightPerson != GuiltyPeopleCount)
             {
                 tmDialog.sentences = new string[] {
-                    "There are guilty still alive? Guilty people should be banished!",
+                    "Some guilty are still alive? Guilty people should be banished!",
                     "Kill the guilty person!"
                 };
                 dialogManager.StartDialogue(tmDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
+            }
+            else if (dialogManager.KilledRightPerson == GuiltyPeopleCount) // won't happen here
+            {
+                GameManager.instace.ShowBombTable();
             }
             else
             {
