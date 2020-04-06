@@ -12,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+
     private void FixedUpdate()
     {
         if (Input.GetKeyDown(StabKey))

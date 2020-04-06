@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &33741586
 Transform:
   m_ObjectHideFlags: 0
@@ -914,6 +914,7 @@ MonoBehaviour:
   - {fileID: 1777035684}
   - {fileID: 1233170829}
   - {fileID: 493297292}
+  BossRoom: {fileID: 33741585}
   pauseMenu: {fileID: 2115641751}
   pauseMenuActive: 0
 --- !u!4 &144761511
@@ -2356,7 +2357,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,7 +2440,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 245f9dd12e481fe459da22ce22fb1637, type: 3}
@@ -5291,12 +5292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9517936c5ff4104799916d379452c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpeakToNum: 4
   dialogue: {fileID: 1607575859}
   dialogueBox: {fileID: 642119949}
   DroneSound: {fileID: 8300000, guid: cbfb4f8e77b5e4c4faa1f2f73bd5d6d9, type: 3}
   killButton: {fileID: 611866128}
   leaveButton: {fileID: 904939623}
-  lostPanel: {fileID: 0}
+  lostPanel: {fileID: 1367565727}
   anim: {fileID: 642119953}
   InDialogue: 0
   InKillingPhase: 0
@@ -7957,7 +7959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636784868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -14, z: 0}
+  m_LocalPosition: {x: 0.04, y: -14.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2113399963}

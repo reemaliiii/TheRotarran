@@ -15,7 +15,8 @@ public class DialogueTrigger : MonoBehaviour
     public bool ShowKillDialogue = true;
     public bool IsBoss = false;
 
-    private void Start() {
+    private void Start()
+    {
         if (!ShouldKill)
             InnocentPeopleCount++;
         else
@@ -25,27 +26,37 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         var dialogManager = DialogueManager.Instance;
-        if (IsBoss) {
+        Debug.Log("KilledWrongPerson: " + dialogManager.KilledWrongPerson + " KilledRightPerson: " + dialogManager.KilledRightPerson);
+        if (IsBoss)
+        {
             var tmDialog = new Dialogue();
-            if (dialogManager.KilledWrongPerson == 0 && dialogManager.KilledRightPerson == 0) {
-                tmDialog.sentences = new string[] {
-                    "No blood?! The guilty is alive? Guilty people should be banished!",
-                    "Kill the guilty person!"
-                };
-                dialogManager.StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill, true);
-            } else {
-                tmDialog.sentences = new string[] {
-                    "You are savage! You made it even worse...",
-                    "You have killed innocent people...",
-                    "Or wait?! Who gave you the right to kill...",
-                };
+            if (dialogManager.KilledWrongPerson == 0 && dialogManager.KilledRightPerson == 0)
+            {
+                
+                //tmDialog.sentences = new string[] {
+                //    "No blood?! The guilty is alive? Guilty people should be banished!",
+                //    "Kill the guilty person!"
+                //};
                 dialogManager.StartDialogue(altDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
             }
-        } else {
+            else
+            {
+               
+                //tmDialog.sentences = new string[] {
+                //    "You are savage! You made it even worse...",
+                //    "You have killed innocent people...",
+                //    "Or wait?! Who gave you the right to kill...",
+                //};
+                dialogManager.StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill, true);
+            }
+        }
+        else
+        {
+            dialogManager.SpokenTo.Add(transform);
             dialogManager.StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill);
         }
 
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill);
+        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill);
     }
 
     void OnInteract(GameObject Caller)
