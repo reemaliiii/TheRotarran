@@ -132,9 +132,9 @@ public class DialogueManager : MonoBehaviour
         leaveButton.gameObject.SetActive(true);
     }
 
-    private void OnKillButtonClick()
+    public void OnKillButtonClick()
     {
-        EndDialogue();
+        //EndDialogue();
 
         if (ShouldKill != true)
         {
@@ -144,6 +144,7 @@ public class DialogueManager : MonoBehaviour
         {
             KilledRightPerson++;
         }
+        Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
     }
 
     private void OnLeaveButtonClick()
