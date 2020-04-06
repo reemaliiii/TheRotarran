@@ -32,22 +32,33 @@ public class DialogueTrigger : MonoBehaviour
             var tmDialog = new Dialogue();
             if (dialogManager.KilledWrongPerson == 0 && dialogManager.KilledRightPerson == 0)
             {
-                
+
                 //tmDialog.sentences = new string[] {
                 //    "No blood?! The guilty is alive? Guilty people should be banished!",
                 //    "Kill the guilty person!"
                 //};
                 dialogManager.StartDialogue(altDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
             }
-            else
+            else if (dialogManager.KilledWrongPerson > 0)
             {
-               
                 //tmDialog.sentences = new string[] {
                 //    "You are savage! You made it even worse...",
                 //    "You have killed innocent people...",
                 //    "Or wait?! Who gave you the right to kill...",
                 //};
                 dialogManager.StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill, true);
+            }
+            else if (dialogManager.KilledRightPerson != GuiltyPeopleCount)
+            {
+                tmDialog.sentences = new string[] {
+                    "There are guilty still alive? Guilty people should be banished!",
+                    "Kill the guilty person!"
+                };
+                dialogManager.StartDialogue(altDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
+            }
+            else
+            {
+
             }
         }
         else

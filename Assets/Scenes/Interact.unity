@@ -916,6 +916,7 @@ MonoBehaviour:
   - {fileID: 1777035684}
   - {fileID: 1233170829}
   - {fileID: 493297292}
+  KeysScore: {fileID: 873391571}
   BossRoom: {fileID: 33741585}
   pauseMenu: {fileID: 2115641751}
   pauseMenuActive: 0
@@ -4876,7 +4877,7 @@ MonoBehaviour:
     - No blood?! The guilty is alive? Guilty people should be banished!
     - Kill the guilty person!
   NextDoor: -1
-  ShouldKill: 0
+  ShouldKill: 1
   ShowKillDialogue: 0
   IsBoss: 1
 --- !u!1001 &1006886241
@@ -9685,7 +9686,7 @@ MonoBehaviour:
   altDialog:
     sentences: []
   NextDoor: -1
-  ShouldKill: 0
+  ShouldKill: 1
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &1954795806

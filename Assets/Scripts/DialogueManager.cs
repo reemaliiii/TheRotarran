@@ -132,10 +132,10 @@ public class DialogueManager : MonoBehaviour
         //leaveButton.gameObject.SetActive(true);
     }
 
-    public void OnKillButtonClick()
+    public void OnKillButtonClick(Transform chr)
     {
         //EndDialogue();
-
+        ShouldKill = chr.GetComponent<DialogueTrigger>().ShouldKill;
         if (ShouldKill != true)
         {
             KilledWrongPerson++;
@@ -144,6 +144,8 @@ public class DialogueManager : MonoBehaviour
         {
             KilledRightPerson++;
         }
+        SpokenTo.Add(chr);
+        GameManager.instace.UpdateKeysScore(KilledRightPerson);
         Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
     }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int RoomCount;
     public Door[] doors;
     int currentDoorProgress;
+    public Text KeysScore;
 
     public GameObject BossRoom;
     public PauseMenu pauseMenu;
@@ -43,8 +45,10 @@ public class GameManager : MonoBehaviour
         currentDoorProgress = 0;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             pauseMenu.HandleGameManagerEscape();
         }
     }
@@ -54,15 +58,15 @@ public class GameManager : MonoBehaviour
         doors[i].Unlocked = true;
     }
 
-   /* public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
+    /* public void StartGame()
+     {
+         SceneManager.LoadScene(1);
+     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }*/
+     public void QuitGame()
+     {
+         Application.Quit();
+     }*/
 
     public void ReturnToMainMenu()
     {
@@ -71,5 +75,10 @@ public class GameManager : MonoBehaviour
     public void UnlockBoss()
     {
         BossRoom.SetActive(true);
+    }
+
+    public void UpdateKeysScore(int keys)
+    {
+        KeysScore.text = keys.ToString() + "*";
     }
 }
