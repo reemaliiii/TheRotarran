@@ -8,6 +8,9 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    public int SpeakToNum;
+    public HashSet<Transform> SpokenTo;
+
     Queue<string> sentences;
 
     public Text dialogue;
@@ -31,25 +34,34 @@ public class DialogueManager : MonoBehaviour
     public int KilledWrongPerson { get; set; } = 0;
     public int KilledRightPerson { get; set; } = 0;
 
-    private void Awake() {
-        if (!Instance) {
+    private void Awake()
+    {
+        if (!Instance)
+        {
             Instance = this;
         }
 
         killButton.onClick.AddListener(OnKillButtonClick);
         leaveButton.onClick.AddListener(OnLeaveButtonClick);
     }
-    private void Start() {
+    private void Start()
+    {
+        SpokenTo = new HashSet<Transform>();
         sentences = new Queue<string>();
         _audioSource = GetComponent<AudioSource>();
     }
-    private void Update() {
-        if (InDialogue && Input.GetKeyDown(KeyCode.Return)) {
+    private void Update()
+    {
+        if (InDialogue && Input.GetKeyDown(KeyCode.Return))
+        {
             _audioSource.Stop();
             NextSentence();
         }
     }
-    public void StartDialogue(Dialogue dialogue, int NextDoor, bool showKillDialogue, bool shouldKill, bool finish = false) {
+    public void StartDialogue(Dialogue dialogue, int NextDoor, bool showKillDialogue, bool shouldKill, bool finish = false)
+    {
+
+
         ShouldKill = shouldKill;
         ShowKillDialogue = showKillDialogue;
         InDialogue = true;
@@ -59,7 +71,8 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
         anim.SetBool("IsOpen", true);
 
-        foreach (string sentence in dialogue.sentences) {
+        foreach (string sentence in dialogue.sentences)
+        {
             sentences.Enqueue(sentence);
         }
 
@@ -74,11 +87,16 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void NextSentence() {
-        if (sentences.Count == 0) {
-            if (ShowKillDialogue) {
+    public void NextSentence()
+    {
+        if (sentences.Count == 0)
+        {
+            if (ShowKillDialogue)
+            {
                 ShowKillOptions();
-            } else {
+            }
+            else
+            {
                 EndDialogue();
             }
             return;
@@ -90,11 +108,13 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(WordByWordSentence(sentence));
     }
 
-    IEnumerator WordByWordSentence(string sentence) {
+    IEnumerator WordByWordSentence(string sentence)
+    {
         dialogue.text = "";
         _audioSource.PlayOneShot(DroneSound);
 
-        foreach (char letter in sentence.ToCharArray()) {
+        foreach (char letter in sentence.ToCharArray())
+        {
             dialogue.text += letter;
             yield return null;
         }
@@ -103,7 +123,8 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void ShowKillOptions() {
+    private void ShowKillOptions()
+    {
         dialogue.text = "";
         InKillingPhase = true;
 
@@ -111,24 +132,35 @@ public class DialogueManager : MonoBehaviour
         leaveButton.gameObject.SetActive(true);
     }
 
-    private void OnKillButtonClick() {
+    private void OnKillButtonClick()
+    {
         EndDialogue();
 
-        if (ShouldKill != true) {
+        if (ShouldKill != true)
+        {
             KilledWrongPerson++;
-        } else {
+        }
+        else
+        {
             KilledRightPerson++;
         }
     }
 
-    private void OnLeaveButtonClick() {
+    private void OnLeaveButtonClick()
+    {
         EndDialogue();
     }
 
     private void EndDialogue()
     {
+        if (SpokenTo.Count >= SpeakToNum)
+        {
+            GameManager.instace.UnlockBoss();
+        }
+
         dialogueBox.SetActive(false);
-        if (LastDialogue) {
+        if (LastDialogue)
+        {
             lostPanel.SetActive(true);
             return;
         }

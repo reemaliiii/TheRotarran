@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Door[] doors;
     int currentDoorProgress;
 
+    public GameObject BossRoom;
     public PauseMenu pauseMenu;
     public bool pauseMenuActive = false;
 
@@ -67,5 +68,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    public void UnlockBoss()
+    {
+        BossRoom.SetActive(true);
+    }
 }
