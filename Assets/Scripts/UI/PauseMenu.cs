@@ -46,9 +46,11 @@ public class PauseMenu : Menu
         var gameManager = GameManager.instace;
         if (!gameManager.pauseMenuActive) {
             Show();
+            Time.timeScale = 0;
         } else {
             Hide();
             HideOverlay();
+            Time.timeScale = 1;
         }
 
         gameManager.pauseMenuActive = !gameManager.pauseMenuActive;
@@ -62,6 +64,7 @@ public class PauseMenu : Menu
         Hide();
         HideOverlay();
         GameManager.instace.pauseMenuActive = false;
+        Time.timeScale = 1;
     }
 
     private void OnOptionsButtonClick() {

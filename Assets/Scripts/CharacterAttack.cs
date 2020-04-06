@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterAttack : MonoBehaviour
 {
-    public KeyCode StabKey = KeyCode.Space;
+    public KeyCode StabKey = KeyCode.K;
 
     Animator anim;
 

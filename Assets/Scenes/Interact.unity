@@ -3086,20 +3086,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8935423, y: 0.13446236}
   m_EdgeRadius: 0
---- !u!4 &689317739
-Transform:
+--- !u!224 &689317739
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689317736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2478156, y: -11.324665, z: -2.1017976}
+  m_LocalPosition: {x: 0, y: 0, z: -2.1017976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.2478156, y: -11.324665}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &702239939
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     public float Speed;
     public AudioClip BossFight;
 
+    private bool KillRight, KillLeft;
+
     Rigidbody2D rb;
     Animator anim;
 
