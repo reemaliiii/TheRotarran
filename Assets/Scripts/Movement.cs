@@ -19,9 +19,11 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
+    CharacterAttack attack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        attack = GetComponent<CharacterAttack>();
         anim = GetComponent<Animator>();
     }
 

@@ -8,16 +8,62 @@ public class CharacterAttack : MonoBehaviour
 
     Animator anim;
 
+    DialogueTrigger chr;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(StabKey))
         {
             anim.SetTrigger("Stab");
+            if (chr)
+            {
+                //print(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+                string currClipName = anim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+                var CharPos = chr.transform.position;
+                var DirToChar = transform.position - CharPos;
+                Vector2 myDir = Vector2.zero;
+
+                if (currClipName.Contains("Side2"))
+                {
+                    myDir = Vector2.right;
+                }
+                else
+                {
+                    myDir = Vector2.left;
+                }
+
+                //print(myDir);
+                //print(DirToChar);
+                var angle = Mathf.Abs(Vector2.Angle(DirToChar, myDir));
+
+                //print(angle);
+
+                if (angle > 160)
+                {
+                    chr.gameObject.SetActive(false);
+                    DialogueManager.Instance.OnKillButtonClick();
+                }
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Interactable")
+        {
+            chr = collision.GetComponent<DialogueTrigger>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Interactable")
+        {
+            chr = null;
         }
     }
 }
