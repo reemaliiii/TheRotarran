@@ -3061,7 +3061,7 @@ MonoBehaviour:
   NextDoor: -1
   ShouldKill: 0
   ShowKillDialogue: 0
-  IsBoss: 1
+  IsBoss: 0
 --- !u!61 &689317738
 BoxCollider2D:
   m_ObjectHideFlags: 0
