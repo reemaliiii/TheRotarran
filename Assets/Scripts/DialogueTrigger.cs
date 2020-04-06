@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public int NextDoor;
     public bool ShouldKill;
 
-    public bool ShowKillDialogue = true;
+    public bool ShowKillDialogue = false;
     public bool IsBoss = false;
 
     private void Start()

@@ -18,8 +18,8 @@ public class DialogueManager : MonoBehaviour
     private AudioSource _audioSource;
     public AudioClip DroneSound;
 
-    public Button killButton;
-    public Button leaveButton;
+    //public Button killButton;
+    //public Button leaveButton;
     public GameObject lostPanel;
 
     public Animator anim;
@@ -41,8 +41,8 @@ public class DialogueManager : MonoBehaviour
             Instance = this;
         }
 
-        killButton.onClick.AddListener(OnKillButtonClick);
-        leaveButton.onClick.AddListener(OnLeaveButtonClick);
+        //killButton.onClick.AddListener(OnKillButtonClick);
+        //leaveButton.onClick.AddListener(OnLeaveButtonClick);
     }
     private void Start()
     {
@@ -128,8 +128,8 @@ public class DialogueManager : MonoBehaviour
         dialogue.text = "";
         InKillingPhase = true;
 
-        killButton.gameObject.SetActive(true);
-        leaveButton.gameObject.SetActive(true);
+        //killButton.gameObject.SetActive(true);
+        //leaveButton.gameObject.SetActive(true);
     }
 
     private void OnKillButtonClick()
@@ -175,8 +175,8 @@ public class DialogueManager : MonoBehaviour
             GameManager.instace.OpenDoor(DoorToUnlock);
         }
 
-        killButton.gameObject.SetActive(false);
-        leaveButton.gameObject.SetActive(false);
+        //killButton.gameObject.SetActive(false);
+        //leaveButton.gameObject.SetActive(false);
 
         _audioSource.Stop();
 
