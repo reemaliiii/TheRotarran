@@ -59,11 +59,12 @@ public class GameManager : MonoBehaviour
         doors[i].Unlocked = true;
     }
 
-    /* public void StartGame()
-     {
-         SceneManager.LoadScene(1);
-     }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 
+    /*
      public void QuitGame()
      {
          Application.Quit();

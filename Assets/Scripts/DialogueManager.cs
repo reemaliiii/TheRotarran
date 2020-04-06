@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     //public Button killButton;
     //public Button leaveButton;
     public GameObject lostPanel;
+    public CameraMovement m_CameraMovement;
 
     public Animator anim;
 
@@ -174,7 +175,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         if (LastDialogue)
         {
-            lostPanel.SetActive(true);
+            StartCoroutine(LoseState());
             return;
         }
 
@@ -198,5 +199,12 @@ public class DialogueManager : MonoBehaviour
     private void StopSound()
     {
         _audioSource.Stop();
+    }
+
+    IEnumerator LoseState()
+    {
+        m_CameraMovement.shakeDuration = 2;
+        yield return new WaitForSeconds(m_CameraMovement.shakeDuration);
+        lostPanel.SetActive(true);
     }
 }
