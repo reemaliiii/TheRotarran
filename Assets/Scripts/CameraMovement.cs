@@ -13,6 +13,17 @@ public class CameraMovement : MonoBehaviour
     public float TopClamp = 0;
     public float DownClamp = 0;
 
+    Transform camTransform;
+
+    // How long the object should shake for.
+    public float shakeDuration = 0f;
+
+    // Amplitude of the shake. A larger value shakes the camera harder.
+    public float shakeAmount = 0.7f;
+    public float decreaseFactor = 1.0f;
+
+
+
 
     void Update()
     {
