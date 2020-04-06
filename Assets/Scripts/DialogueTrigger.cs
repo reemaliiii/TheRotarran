@@ -54,7 +54,7 @@ public class DialogueTrigger : MonoBehaviour
                     "There are guilty still alive? Guilty people should be banished!",
                     "Kill the guilty person!"
                 };
-                dialogManager.StartDialogue(altDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
+                dialogManager.StartDialogue(tmDialog, NextDoor, ShowKillDialogue, ShouldKill, true);
             }
             else
             {

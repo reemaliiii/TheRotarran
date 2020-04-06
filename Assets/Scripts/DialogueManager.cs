@@ -136,7 +136,7 @@ public class DialogueManager : MonoBehaviour
     {
         //EndDialogue();
         ShouldKill = chr.GetComponent<DialogueTrigger>().ShouldKill;
-        chr.GetComponent<Animator>().SetBool("IsDead", true);
+        chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
         if (ShouldKill != true)
         {
             KilledWrongPerson++;
