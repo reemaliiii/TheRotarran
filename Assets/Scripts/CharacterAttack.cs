@@ -46,9 +46,7 @@ public class CharacterAttack : MonoBehaviour
                 if (angle > 160)
                 {
                     DialogueManager.Instance.OnKillButtonClick(chr.transform);
-                    print(chr.tag);
                     chr.tag = "Untagged";
-                    print(chr.tag);
                     //chr.gameObject.SetActive(false);
                 }
                 chr = null;
