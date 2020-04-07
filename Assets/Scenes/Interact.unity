@@ -3225,7 +3225,7 @@ MonoBehaviour:
     - we withheld the four suspects within their respective rooms
     - you can interrogate and you are permitted to take any action as you see fit
     - it was a long run with this criminal detective now we can finally catch him
-    - you need to collect "2" keys to diffuse the bomb!!
+    - you need to kill the "2" suspects to collect "2" keys to diffuse the bomb!!
     - 'you can move with W,A,S,D and interact with "T" '
     - remember you can press "K" to kill the suspecious person before he commits
       his crime!!
@@ -3840,7 +3840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102162992, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -175.55556
+      value: -127.916664
       objectReference: {fileID: 0}
     - target: {fileID: 102162992, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3880,35 +3880,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1842066282, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -78.888885
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842066282, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 17.777777
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849582408, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -126.666664
+      value: -126.875
       objectReference: {fileID: 0}
     - target: {fileID: 1849582409, guid: 9177729d2ab3e3a4f974fcd79484568e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 17.777777
+      value: 17.916666
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320150994199, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
@@ -3923,31 +3927,36 @@ PrefabInstance:
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.55556
+      value: -150.83333
       objectReference: {fileID: 0}
     - target: {fileID: 4444203320250786268, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444203320250786271, guid: 9177729d2ab3e3a4f974fcd79484568e,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4891599673299162439, guid: 9177729d2ab3e3a4f974fcd79484568e,
@@ -4033,7 +4042,7 @@ PrefabInstance:
     - target: {fileID: 4891599673299162440, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 260.55554
+      value: 212.91666
       objectReference: {fileID: 0}
     - target: {fileID: 4891599673299162440, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
@@ -4088,7 +4097,7 @@ PrefabInstance:
     - target: {fileID: 5463608003650789508, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -102.77778
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463608003650789508, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
@@ -4128,7 +4137,7 @@ PrefabInstance:
     - target: {fileID: 8194847415180245558, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -215.55556
+      value: -167.91666
       objectReference: {fileID: 0}
     - target: {fileID: 8194847415180245558, guid: 9177729d2ab3e3a4f974fcd79484568e,
         type: 3}
@@ -6729,9 +6738,7 @@ MonoBehaviour:
     sentences:
     - Meow...
     - Meow Meow....
-    - '>_>
-
-'
+    - ^_^
   altDialog:
     sentences: []
   NextDoor: 0
@@ -9001,6 +9008,10 @@ MonoBehaviour:
   Boss: {fileID: 21300000, guid: d80ede8c5535f2c4f8c2a402780a0a73, type: 3}
   cat: {fileID: 21300000, guid: 261ac8e5c480db54882417e796573c22, type: 3}
   Drone: {fileID: 21300000, guid: 4907d9dbb274ce8438e136ad91e9eda4, type: 3}
+  DefaultInteractionText: {fileID: 21300000, guid: a710d6337049d96419d77bbf5309aae9,
+    type: 3}
+  BombInteractionText: {fileID: 21300000, guid: 9057e9a0df883b944841afc951e26ee2,
+    type: 3}
 --- !u!95 &1636784874
 Animator:
   serializedVersion: 3
