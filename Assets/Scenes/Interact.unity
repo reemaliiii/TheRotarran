@@ -435,6 +435,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: -1
   ShouldKill: 0
+  ShouldInteractBeforeBoss: 1
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &49981021
@@ -1358,6 +1359,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: 1
   ShouldKill: 0
+  ShouldInteractBeforeBoss: 1
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &284502243
@@ -3233,6 +3235,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: -1
   ShouldKill: 0
+  ShouldInteractBeforeBoss: 0
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &689317738
@@ -5359,6 +5362,7 @@ MonoBehaviour:
     - NOW PRAY FOR YOUR SOUL!
   NextDoor: -1
   ShouldKill: 1
+  ShouldInteractBeforeBoss: 0
   ShowKillDialogue: 0
   IsBoss: 1
 --- !u!1001 &1006886241
@@ -5703,6 +5707,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: -1
   ShouldKill: 0
+  ShouldInteractBeforeBoss: 1
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &1120342224
@@ -6046,7 +6051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9517936c5ff4104799916d379452c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeakToNum: 4
   dialogue: {fileID: 1607575859}
   dialogueBox: {fileID: 642119949}
   lostPanel: {fileID: 1367565727}
@@ -6736,6 +6740,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: 0
   ShouldKill: 0
+  ShouldInteractBeforeBoss: 0
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &1308606166
@@ -10552,6 +10557,7 @@ MonoBehaviour:
     sentences: []
   NextDoor: -1
   ShouldKill: 1
+  ShouldInteractBeforeBoss: 1
   ShowKillDialogue: 0
   IsBoss: 0
 --- !u!61 &1954795806

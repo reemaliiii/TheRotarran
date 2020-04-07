@@ -6,11 +6,13 @@ public class DialogueTrigger : MonoBehaviour
 {
     public static int InnocentPeopleCount = 0;
     public static int GuiltyPeopleCount = 0;
+    public static int InteractPeopleBeforeCount = 0;
 
     public Dialogue dialogue;
     public Dialogue altDialog;
     public int NextDoor;
     public bool ShouldKill;
+    public bool ShouldInteractBeforeBoss;
 
     public bool ShowKillDialogue = false;
     public bool IsBoss = false;
@@ -21,6 +23,10 @@ public class DialogueTrigger : MonoBehaviour
             InnocentPeopleCount++;
         else
             GuiltyPeopleCount++;
+        if (ShouldInteractBeforeBoss)
+        {
+            InteractPeopleBeforeCount++;
+        }
     }
 
     public void TriggerDialogue()
@@ -67,7 +73,10 @@ public class DialogueTrigger : MonoBehaviour
         }
         else
         {
-            dialogManager.SpokenTo.Add(transform);
+            if (ShouldInteractBeforeBoss)
+            {
+                dialogManager.SpokenTo.Add(transform);
+            }
             dialogManager.StartDialogue(dialogue, NextDoor, ShowKillDialogue, ShouldKill);
         }
 

@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    public int SpeakToNum;
+    //public int SpeakToNum;
     public HashSet<Transform> SpokenTo;
 
     Queue<string> sentences;
@@ -133,11 +133,11 @@ public class DialogueManager : MonoBehaviour
         //leaveButton.gameObject.SetActive(true);
     }
 
-    private Transform CharTemp ;
+    private Transform CharTemp;
 
     public void OnKillButtonClick(Transform chr)
     {
-        
+
         //EndDialogue();
         DialogueTrigger dt = chr.GetComponent<DialogueTrigger>();
         ShouldKill = dt.ShouldKill;
@@ -156,7 +156,7 @@ public class DialogueManager : MonoBehaviour
 
         SpokenTo.Add(chr);
 
-        if (SpokenTo.Count >= SpeakToNum)
+        if (SpokenTo.Count >= DialogueTrigger.InteractPeopleBeforeCount)
         {
             GameManager.instace.UnlockBoss();
         }
@@ -169,7 +169,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            
+
         }
         Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
         chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
@@ -182,7 +182,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        if (SpokenTo.Count >= SpeakToNum)
+        if (SpokenTo.Count >= DialogueTrigger.InteractPeopleBeforeCount)
         {
             GameManager.instace.UnlockBoss();
         }
@@ -207,7 +207,7 @@ public class DialogueManager : MonoBehaviour
         //killButton.gameObject.SetActive(false);
         //leaveButton.gameObject.SetActive(false);
 
-        
+
 
         _audioSource.Stop();
 
