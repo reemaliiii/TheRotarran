@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     public Sprite Boss;
     public Sprite cat;
     public Sprite Drone;
+    public Sprite DefaultInteractionText;
+    public Sprite BombInteractionText;
     
 
 
@@ -42,6 +44,12 @@ public class Movement : MonoBehaviour
         if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(true);
+            InteractionText.GetComponent<SpriteRenderer>().sprite = DefaultInteractionText;
+
+            if(collision.name == "BOMB!!")
+            {
+                InteractionText.GetComponent<SpriteRenderer>().sprite = BombInteractionText;
+            }
 
             if(collision.name == "cat1")
             {
