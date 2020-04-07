@@ -16,7 +16,9 @@ public class DialogueManager : MonoBehaviour
     public Text dialogue;
     public GameObject dialogueBox;
     private AudioSource _audioSource;
-    //public AudioClip DroneSound;
+    public AudioClip BossSound;
+    public AudioClip CatSound;
+    public AudioClip ExplosionSound;
 
     //public Button killButton;
     //public Button leaveButton;
@@ -112,7 +114,9 @@ public class DialogueManager : MonoBehaviour
     IEnumerator WordByWordSentence(string sentence)
     {
         dialogue.text = "";
-        //_audioSource.PlayOneShot(DroneSound);
+
+        
+        _audioSource.PlayOneShot(_audioSource.clip);
 
         foreach (char letter in sentence.ToCharArray())
         {
@@ -120,7 +124,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
 
-        //Invoke("StopSound" , 1f);
+        Invoke("StopSound" , 1f);
 
     }
 
@@ -221,6 +225,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator LoseState()
     {
         m_CameraMovement.shakeDuration = 2;
+        GetComponent<AudioSource>().PlayOneShot(ExplosionSound);
         yield return new WaitForSeconds(m_CameraMovement.shakeDuration);
         lostPanel.SetActive(true);
     }

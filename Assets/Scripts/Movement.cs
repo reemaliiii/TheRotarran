@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        var dialogManager = DialogueManager.Instance;
         if (collision.transform.tag == "Interactable")
         {
             InteractionText.SetActive(true);
@@ -54,7 +55,7 @@ public class Movement : MonoBehaviour
             if(collision.name == "cat1")
             {
                 Narratorpic.sprite = cat;
-                m_DialogueManager.GetComponent<AudioSource>().enabled = false;
+                m_DialogueManager.GetComponent<AudioSource>().clip = dialogManager.CatSound;
             }
 
             /*else if(collision.name == "Boss")
@@ -67,7 +68,7 @@ public class Movement : MonoBehaviour
             {
                 //Narratorpic.sprite = Drone;
                 Narratorpic.sprite = Boss;
-                m_DialogueManager.GetComponent<AudioSource>().enabled = true;
+                m_DialogueManager.GetComponent<AudioSource>().clip = dialogManager.BossSound;
             }
 
         }
