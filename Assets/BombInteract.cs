@@ -33,5 +33,9 @@ public class BombInteract : MonoBehaviour
     private void WinState()
     {
         WonPanel.SetActive(true);
+
+        Camera.main.GetComponent<AudioSource>().Stop();
+        Camera.main.GetComponent<AudioSource>().volume = 0.2f;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(DialogueManager.Instance.WinSong);
     }
 }

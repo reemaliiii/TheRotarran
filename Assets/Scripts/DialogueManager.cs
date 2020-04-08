@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     public AudioClip BossSound;
     public AudioClip CatSound;
     public AudioClip ExplosionSound;
+    public AudioClip LoseSong;
+    public AudioClip WinSong;
 
     //public Button killButton;
     //public Button leaveButton;
@@ -232,6 +234,9 @@ public class DialogueManager : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(ExplosionSound);
         yield return new WaitForSeconds(m_CameraMovement.shakeDuration - .5f);
         lostPanel.SetActive(true);
+        Camera.main.GetComponent<AudioSource>().Stop();
+        Camera.main.GetComponent<AudioSource>().volume = 0.2f;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LoseSong);
         Destroy(x , 1);
     }
 }

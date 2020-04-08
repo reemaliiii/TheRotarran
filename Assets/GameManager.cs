@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     public void UnlockBoss()
     {
         BossRoom.SetActive(true);
-        InstructionsImage.SetActive(true);
+        GameManager.instace.InstructionsImage.SetActive(true);
     }
 
     public void UpdateKeysScore(int keys)

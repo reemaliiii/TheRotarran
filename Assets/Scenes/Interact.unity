@@ -1807,7 +1807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -264, y: -30.199997}
+  m_AnchoredPosition: {x: -264, y: -30.199951}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!95 &425290664
@@ -2284,7 +2284,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 245f9dd12e481fe459da22ce22fb1637, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5769,6 +5769,8 @@ MonoBehaviour:
   BossSound: {fileID: 8300000, guid: c19808cec07090e468743137cd7c61b1, type: 3}
   CatSound: {fileID: 8300000, guid: e0d8e9df27ccd58408d7d48149110558, type: 3}
   ExplosionSound: {fileID: 8300000, guid: 4d14a3811a5d1c8488303bf7b2d37563, type: 3}
+  LoseSong: {fileID: 8300000, guid: 24f950ac53d78a94c962057951619ebf, type: 3}
+  WinSong: {fileID: 8300000, guid: 0a563d1bdbd63fb4e86e5974f577d03d, type: 3}
   lostPanel: {fileID: 1367565727}
   ExplosionParticles: {fileID: 9011272533020800252, guid: 8b475396850094345a5c49730532e366,
     type: 3}
