@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     public Sprite Drone;
     public Sprite DefaultInteractionText;
     public Sprite BombInteractionText;
-    
+
 
 
     private bool KillRight, KillLeft;
@@ -47,12 +47,12 @@ public class Movement : MonoBehaviour
             InteractionText.SetActive(true);
             InteractionText.GetComponent<SpriteRenderer>().sprite = DefaultInteractionText;
 
-            if(collision.name == "BOMB!!")
+            if (collision.name == "BOMB!!")
             {
                 InteractionText.GetComponent<SpriteRenderer>().sprite = BombInteractionText;
             }
 
-            if(collision.name == "cat1")
+            if (collision.name == "cat1")
             {
                 Narratorpic.sprite = cat;
                 //m_DialogueManager.GetComponent<AudioSource>().enabled = true;
@@ -117,8 +117,8 @@ public class Movement : MonoBehaviour
             mov.x = Input.GetAxis("Horizontal");
             mov.y = Input.GetAxis("Vertical");
 
-            anim.SetInteger("DirX", System.Convert.ToInt32(mov.x));
-            anim.SetInteger("DirY", System.Convert.ToInt32(-mov.y));
+            anim.SetInteger("DirX", System.Convert.ToInt32(mov.x * 10));
+            anim.SetInteger("DirY", System.Convert.ToInt32(-mov.y * 10));
 
             mov.Normalize();
 
