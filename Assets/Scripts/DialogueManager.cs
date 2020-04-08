@@ -196,6 +196,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         if (LastDialogue)
         {
+            Destroy(GameManager.instace.InstructionsImage);
             StartCoroutine(LoseState());
             return;
         }

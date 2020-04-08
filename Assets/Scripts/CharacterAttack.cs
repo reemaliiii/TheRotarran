@@ -6,6 +6,12 @@ public class CharacterAttack : MonoBehaviour
 {
     public KeyCode StabKey = KeyCode.K;
     public GameObject InteractionText;
+    public AudioClip FemalePainSound;
+    public AudioClip MalePainSound;
+    public AudioClip NoTargetKnifeAttack;
+    public AudioClip TargetKnifeAttack;
+
+
 
     Animator anim;
 
@@ -20,6 +26,8 @@ public class CharacterAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(StabKey))
         {
+            DialogueManager.Instance.GetComponent<AudioSource>().PlayOneShot(NoTargetKnifeAttack);
+
             anim.SetTrigger("Stab");
             if (chr)
             {
@@ -46,11 +54,23 @@ public class CharacterAttack : MonoBehaviour
 
                 if (angle > 150)
                 {
+                    if(chr.name == "Tilla Martinez")
+                    {
+                        DialogueManager.Instance.GetComponent<AudioSource>().PlayOneShot(FemalePainSound);
+                    }
+
+                    else
+                    {
+                        DialogueManager.Instance.GetComponent<AudioSource>().PlayOneShot(MalePainSound);
+                    }
+
+                    //DialogueManager.Instance.GetComponent<AudioSource>().PlayOneShot(TargetKnifeAttack);
                     DialogueManager.Instance.OnKillButtonClick(chr.transform);
                     chr.tag = "Untagged";
                     InteractionText.SetActive(false);
                     //chr.gameObject.SetActive(false);
                     chr = null;
+
                 }
             }
         }

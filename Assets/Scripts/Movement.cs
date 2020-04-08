@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
 
     Rigidbody2D rb;
     Animator anim;
+    public Animator m_Instruction_Anim;
 
     CharacterAttack attack;
     void Start()
@@ -85,6 +86,8 @@ public class Movement : MonoBehaviour
             Camera.main.GetComponent<AudioSource>().Stop();
             Camera.main.GetComponent<AudioSource>().PlayOneShot(BossFight);
             BossRoomDoor.SetActive(true);
+            StartCoroutine(Instruction_UI());
+
         }
 
 
@@ -129,5 +132,13 @@ public class Movement : MonoBehaviour
         }
     }
 
+    IEnumerator Instruction_UI()
+    {
+        m_Instruction_Anim.SetBool("IsOpen", false);
+
+        yield return new WaitForSeconds(2);
+
+        GameManager.instace.InstructionsImage.SetActive(false);
+    }
 
 }

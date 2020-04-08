@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Door[] doors;
     int currentDoorProgress;
     public Text KeysScore;
+    public GameObject InstructionsImage;
 
     public GameObject bombTable;
     public GameObject BossRoom;
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
         {
             instace = this;
         }
+
+        Time.timeScale = 1;
     }
     private void Start()
     {
@@ -79,6 +82,7 @@ public class GameManager : MonoBehaviour
     public void UnlockBoss()
     {
         BossRoom.SetActive(true);
+        InstructionsImage.SetActive(true);
     }
 
     public void UpdateKeysScore(int keys)

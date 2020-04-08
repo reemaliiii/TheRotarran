@@ -837,6 +837,7 @@ MonoBehaviour:
   RoomCount: 0
   doors: []
   KeysScore: {fileID: 873391571}
+  InstructionsImage: {fileID: 425290662}
   bombTable: {fileID: 413872740}
   BossRoom: {fileID: 33741585}
   pauseMenu: {fileID: 2115641751}
@@ -1771,6 +1772,99 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &425290662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425290663}
+  - component: {fileID: 425290666}
+  - component: {fileID: 425290665}
+  - component: {fileID: 425290664}
+  m_Layer: 5
+  m_Name: Boss_Instruction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &425290663
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425290662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 1908322170}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -264, y: -30.199997}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!95 &425290664
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425290662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab1443658da4dba4cb06471b628f85c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &425290665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425290662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 140bd4d532e68fc4889c33fd8a6f091b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &425290666
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425290662}
+  m_CullTransparentMesh: 0
 --- !u!1 &439724114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2113,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1636784872}
-  offset: {x: 0, y: 0, z: -7}
+  offset: {x: 0, y: 0, z: -10}
   LeftClamp: -5
   RightClamp: 5
   TopClamp: 13.5
@@ -3245,7 +3339,7 @@ RectTransform:
   - {fileID: 1481940164}
   - {fileID: 935538269}
   m_Father: {fileID: 1908322170}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6868,7 +6962,7 @@ RectTransform:
   - {fileID: 1650425068}
   - {fileID: 1839515905}
   m_Father: {fileID: 1908322170}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8627,6 +8721,7 @@ MonoBehaviour:
     type: 3}
   BombInteractionText: {fileID: 21300000, guid: 9057e9a0df883b944841afc951e26ee2,
     type: 3}
+  m_Instruction_Anim: {fileID: 425290664}
 --- !u!95 &1636784874
 Animator:
   serializedVersion: 3
@@ -8674,6 +8769,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StabKey: 107
   InteractionText: {fileID: 2113399962}
+  FemalePainSound: {fileID: 8300000, guid: a25d226f45c8a714fb8d255e28612ff7, type: 3}
+  MalePainSound: {fileID: 8300000, guid: 626331dd4da8f104a8fadd05279ae037, type: 3}
+  NoTargetKnifeAttack: {fileID: 8300000, guid: 3391432e6fb2c034c8f0542139b93334, type: 3}
+  TargetKnifeAttack: {fileID: 8300000, guid: 4b96f684f5568454a832d4d55e0c0615, type: 3}
 --- !u!4 &1645821099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2646256710741215718, guid: 6fda526a121343449af9ae7e6670886b,
@@ -10072,6 +10171,7 @@ RectTransform:
   - {fileID: 825490158}
   - {fileID: 579490050}
   - {fileID: 873391570}
+  - {fileID: 425290663}
   - {fileID: 1367565728}
   - {fileID: 764249369}
   m_Father: {fileID: 0}
