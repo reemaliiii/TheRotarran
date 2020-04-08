@@ -428,9 +428,9 @@ MonoBehaviour:
     - Harry Mason a 32 year old divorced man who claims to have come to visit his
       kids who live with their mother to spend the weekend with them like he usually
       do.
-    - he was seeing near the bomb area when questioned he was nervous and said he
+    - He was seeing near the bomb area when questioned he was nervous and said he
       wandered near the bomb area looking for his lost kid there.
-    - there is a low possibility of him being a liar.
+    - There is a low possibility of him being a liar.
   altDialog:
     sentences: []
   NextDoor: -1
@@ -1199,7 +1199,7 @@ MonoBehaviour:
     - "SSgt John Smith 55 year\u2019s old retired policeman he was witnessed in the
       area near the bomb before the bomb was planted and it seemed like he was investigating
       something."
-    - when questioned he wont give us any information he claims to be just walking
+    - When questioned he wont give us any information he claims to be just walking
       around the area even though the readings show no signs of lying at all but
       his refusal to cooperate means he is hiding something.
   altDialog:
@@ -2925,15 +2925,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - welcome detective, after discovering the timed bomb at the champ mall the surveillance
+    - Welcome detective, after discovering the timed bomb at the champ mall the surveillance
       data led us to four suspects that might be an accomplice of the terrorist who
-      made the bomb
-    - we withheld the four suspects within their respective rooms
-    - you can interrogate and you are permitted to take any action as you see fit
-    - it was a long run with this criminal detective now we can finally catch him
-    - you need to kill the "2" suspects to collect "2" keys to diffuse the bomb!!
-    - 'you can move with W,A,S,D and interact with "T" '
-    - remember you can press "K" to kill the suspecious person before he commits
+      made the bomb.
+    - we withheld the four suspects within their respective rooms.
+    - You can interrogate and you are permitted to take any action as you see fit.
+    - It was a long run with this criminal detective now we can finally catch him.
+    - You need to kill the "2" suspects to collect "2" keys to diffuse the bomb!!
+    - You can move with W,A,S,D and interact with "T".
+    - Remember you can press "K" to kill the suspecious person before he commits
       his crime!!
   altDialog:
     sentences: []
@@ -5412,10 +5412,10 @@ MonoBehaviour:
     sentences:
     - Tilla Martinez a 24 year old photographer who claims to be in town for shooting
       photos for her company to advertise tours.
-    - her photos helped us a lot as evidence in the past she was witnessed at the
+    - Her photos helped us a lot as evidence in the past she was witnessed at the
       area of suspicion she was seen taking pictures around the bomb area.
-    - ' when questioned she said there were good angles from there she was cooperative
-      even though that there is a small possibility that she is lying.'
+    - When questioned she said there were good angles from there she was cooperative
+      even though that there is a small possibility that she is lying.
   altDialog:
     sentences: []
   NextDoor: -1
@@ -10268,8 +10268,8 @@ MonoBehaviour:
     - Jeff Francis is a 42 years old business man who travels around the world a
       lot dealing in shady money laundering; he was seen at the mall around the area
       and the time in which the bomb was planted in and out.
-    - ' he claims that he was attending a business meeting in a restaurant in the
-      mall when questioned his readings showed that he might be lying.'
+    - He claims that he was attending a business meeting in a restaurant in the mall
+      when questioned his readings showed that he might be lying.
   altDialog:
     sentences: []
   NextDoor: -1

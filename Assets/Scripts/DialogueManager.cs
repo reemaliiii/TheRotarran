@@ -230,7 +230,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator LoseState()
     {
         m_CameraMovement.shakeDuration = 2.5f;
-        var x = Instantiate(ExplosionParticles, new Vector3( 0 , 14.5f , -2f ), Quaternion.identity);
+        var x = Instantiate(ExplosionParticles, new Vector3( 0 , 14.5f , -3f ), Quaternion.identity);
         GetComponent<AudioSource>().PlayOneShot(ExplosionSound);
         yield return new WaitForSeconds(m_CameraMovement.shakeDuration - .5f);
         lostPanel.SetActive(true);
