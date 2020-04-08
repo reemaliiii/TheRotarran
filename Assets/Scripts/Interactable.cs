@@ -6,7 +6,6 @@ public class Interactable : MonoBehaviour
 {
     void OnInteract(GameObject Caller)
     {
-
         Debug.Log(Caller.name + " Interact with " + name);
     }
 

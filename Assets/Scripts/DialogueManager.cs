@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
     //public Button killButton;
     //public Button leaveButton;
     public GameObject lostPanel;
+    public GameObject ExplosionParticles;
+    public GameObject ExplosionPosition;
     public CameraMovement m_CameraMovement;
 
     public Animator anim;
@@ -224,9 +226,11 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator LoseState()
     {
-        m_CameraMovement.shakeDuration = 2;
+        m_CameraMovement.shakeDuration = 2.5f;
+        var x = Instantiate(ExplosionParticles, new Vector3( 0 , 14.5f , -2f ), Quaternion.identity);
         GetComponent<AudioSource>().PlayOneShot(ExplosionSound);
-        yield return new WaitForSeconds(m_CameraMovement.shakeDuration);
+        yield return new WaitForSeconds(m_CameraMovement.shakeDuration - .5f);
         lostPanel.SetActive(true);
+        Destroy(x , 1);
     }
 }

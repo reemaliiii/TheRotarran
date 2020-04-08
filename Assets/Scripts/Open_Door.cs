@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Open_Door : MonoBehaviour
 {
-
-    /*void OnInteract(GameObject Caller)
-    {
-        
-    }*/
     public Animator m_Animator;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnInteract(GameObject Caller)
+    {
+        m_Animator.SetBool("IsOpen", true);
+    }
+
+    
+
+  /*  private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
@@ -21,5 +23,5 @@ public class Open_Door : MonoBehaviour
                 m_Animator.SetBool("IsOpen", true);
             }
         }
-    }
+    }*/
 }

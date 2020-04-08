@@ -55,6 +55,7 @@ public class Movement : MonoBehaviour
             if(collision.name == "cat1")
             {
                 Narratorpic.sprite = cat;
+                //m_DialogueManager.GetComponent<AudioSource>().enabled = true;
                 m_DialogueManager.GetComponent<AudioSource>().clip = dialogManager.CatSound;
             }
 
@@ -69,6 +70,8 @@ public class Movement : MonoBehaviour
                 //Narratorpic.sprite = Drone;
                 Narratorpic.sprite = Boss;
                 m_DialogueManager.GetComponent<AudioSource>().clip = dialogManager.BossSound;
+                //m_DialogueManager.GetComponent<AudioSource>().enabled = false ;
+
             }
 
         }
