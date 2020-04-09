@@ -41,6 +41,13 @@ public class DialogueManager : MonoBehaviour
     public int KilledWrongPerson { get; set; } = 0;
     public int KilledRightPerson { get; set; } = 0;
 
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 1)
+        {
+            Instance = this;
+        }
+    }
     private void Awake()
     {
         if (!Instance)

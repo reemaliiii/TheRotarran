@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour
 
     private bool m_bBossUnlocked;
 
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 1)
+        {
+            instace = this;
+        }
+    }
+
     public void OpenBox()
     {
         switch (Keys)
@@ -69,6 +77,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+
     }
 
     /*

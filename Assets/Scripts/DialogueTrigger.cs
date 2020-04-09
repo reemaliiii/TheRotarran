@@ -17,6 +17,15 @@ public class DialogueTrigger : MonoBehaviour
     public bool ShowKillDialogue = false;
     public bool IsBoss = false;
 
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 1)
+        {
+            InnocentPeopleCount = 0;
+            GuiltyPeopleCount = 0;
+            InteractPeopleBeforeCount = 0;
+        }
+    }
     private void Start()
     {
         if (!ShouldKill)
