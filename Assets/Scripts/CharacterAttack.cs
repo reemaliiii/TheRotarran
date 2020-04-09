@@ -29,7 +29,7 @@ public class CharacterAttack : MonoBehaviour
             DialogueManager.Instance.GetComponent<AudioSource>().PlayOneShot(NoTargetKnifeAttack);
 
             anim.SetTrigger("Stab");
-            if (chr && chr.ShouldInteractBeforeBoss == true)
+            if (chr)
             {
                 //print(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
                 string currClipName = anim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
@@ -52,7 +52,7 @@ public class CharacterAttack : MonoBehaviour
 
                 print(angle);
 
-                if (angle > 150 )
+                if (angle > 150 && chr.ShouldInteractBeforeBoss == true || angle > 150 && chr.IsBoss == true)
                 {
                     if(chr.name == "Tilla Martinez")
                     {
