@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public PauseMenu pauseMenu;
     public bool pauseMenuActive = false;
 
+    private bool m_bBossUnlocked;
+
     public void OpenBox()
     {
         switch (Keys)
@@ -81,8 +83,12 @@ public class GameManager : MonoBehaviour
     }
     public void UnlockBoss()
     {
+        if (m_bBossUnlocked)
+            return;
+        m_bBossUnlocked = true;
         BossRoom.SetActive(true);
         GameManager.instace.InstructionsImage.SetActive(true);
+
     }
 
     public void UpdateKeysScore(int keys)

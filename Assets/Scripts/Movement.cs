@@ -138,7 +138,11 @@ public class Movement : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        GameManager.instace.InstructionsImage.SetActive(false);
+        if (GameManager.instace.InstructionsImage)
+            //GameManager.instace.InstructionsImage.SetActive(false);
+
+            Destroy(GameManager.instace.InstructionsImage);
+
     }
 
 }
