@@ -3,7 +3,7 @@ A Game for It's A Lie Theme
 
 ## Credits
 All the assets(Scripts and Art) were made by us in the jam.
-![alt text](https://raw.githubusercontent.com/MKSherbini/TheRotarran/master/Images/credits.png)
+![alt text](/Images/credits.png)
 
 
 The main target platform is PC and WebGL.
