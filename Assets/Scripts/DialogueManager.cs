@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogue.text = "";
 
-        
+
         _audioSource.PlayOneShot(_audioSource.clip);
 
         foreach (char letter in sentence.ToCharArray())
@@ -128,7 +128,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
 
-        Invoke("StopSound" , 1f);
+        Invoke("StopSound", 1f);
 
     }
 
@@ -177,9 +177,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-
         }
         Debug.Log("KilledWrongPerson: " + KilledWrongPerson + " KilledRightPerson: " + KilledRightPerson);
+        dt.enabled = false;
         chr.GetComponentInChildren<Animator>().SetBool("IsDead", true);
     }
 
@@ -230,13 +230,13 @@ public class DialogueManager : MonoBehaviour
     IEnumerator LoseState()
     {
         m_CameraMovement.shakeDuration = 2.5f;
-        var x = Instantiate(ExplosionParticles, new Vector3( 0 , 14.5f , -3f ), Quaternion.identity);
+        var x = Instantiate(ExplosionParticles, new Vector3(0, 14.5f, -3f), Quaternion.identity);
         GetComponent<AudioSource>().PlayOneShot(ExplosionSound);
         yield return new WaitForSeconds(m_CameraMovement.shakeDuration - .5f);
         lostPanel.SetActive(true);
         Camera.main.GetComponent<AudioSource>().Stop();
         Camera.main.GetComponent<AudioSource>().volume = 0.2f;
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LoseSong);
-        Destroy(x , 1);
+        Destroy(x, 1);
     }
 }
