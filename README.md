@@ -1,5 +1,5 @@
 # TheRotarran
-A Game for It's A Lie Theme
+A Game for It's A Lie Themed Jam
 
 ## Credits
 All the assets(Scripts and Art) were made by us in the jam.
